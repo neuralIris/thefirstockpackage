@@ -53,10 +53,10 @@ class ApiRequests(FirstockAPI):
                 with open("config.json", "w") as outfile:
                     outfile.write(jsonObject)
 
-                return finalResult
+                return jsonString
 
             else:
-                return finalResult
+                return jsonString
 
         except Exception as e:
             print(e)
