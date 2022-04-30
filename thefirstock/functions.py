@@ -18,9 +18,7 @@ class ApiRequests(FirstockAPI):
             encryptedPassword = encodePwd(pwd)
 
             keyGenerator = generateKey(uid, appkey)
-
             apiKey = encodePwd(keyGenerator)
-
             url = LOGIN
 
             payload = {
@@ -45,7 +43,8 @@ class ApiRequests(FirstockAPI):
                     "uid": uid,
                     "factor2": factor2,
                     "vc": vc,
-                    "jKey": finalResult["susertoken"]
+                    "jKey": finalResult["susertoken"],
+                    "webSocketLogin": jsonString
                 }
 
                 jsonObject = json.dumps(dictionary, indent=4)

@@ -93,7 +93,11 @@ class LoginResponseModel(BaseModel):
         })
 
 
-def webSocketLogin(result):
+def webSocketLogin():
+    with open("config.json") as file:
+        data = json.load(file)
+
+    result = data["webSocketLogin"]
     credentials = LoginResponseModel.parse_raw(result)
     client.login(credentials)
 
